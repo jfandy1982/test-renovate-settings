@@ -1,0 +1,30 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "dependencyDashboard": true,
+  "labels": ["type: dependencies"],
+  "prCreation": "manual",
+  "automerge": false,
+  "schedule": ["after 1am and before 11pm on Friday"],
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "@commitlint/cli",
+        "@commitlint/config-conventional",
+        "@cspell/dict-de-de",
+        "cspell",
+        "husky",
+        "js-yaml",
+        "lint-staged",
+        "prettier"
+      ],
+      "matchUpdateTypes": ["minor", "patch"],
+      "prCreation": "immediate",
+      "automerge": true,
+      "automergeType": "branch",
+      "minimumReleaseAge": "3 days",
+      "commitMessagePrefix": "chore:",
+      "labels": ["status: automerge", "type: dependencies"]
+    }
+  ]
+}

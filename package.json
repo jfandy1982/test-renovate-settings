@@ -1,0 +1,22 @@
+{
+  "name": "test-renovate-settings",
+  "private": true,
+  "scripts": {
+    "format:all": "prettier --write .",
+    "format:all:check": "prettier --check .",
+    "prepare": "husky || true",
+    "spell:all:check": "cspell lint --dot --show-suggestions --no-progress --no-must-find-files --config ./.cspell.json .",
+    "spell:all:search": "cspell trace --all --config ./.cspell.json",
+    "yaml:all:check": "find .github/workflows -name '*.yml' -exec js-yaml {} \\;"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.0.0",
+    "@commitlint/config-conventional": "^21.0.0",
+    "@cspell/dict-de-de": "^4.0.0",
+    "cspell": "^10.0.0",
+    "husky": "^9.0.0",
+    "js-yaml": "^4.2.0",
+    "lint-staged": "^17.0.0",
+    "prettier": "^3.0.0"
+  }
+}
